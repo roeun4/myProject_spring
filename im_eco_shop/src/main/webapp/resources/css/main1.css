@@ -1,0 +1,120 @@
+@charset "UTF-8";
+
+ul{list-style: none;}
+a{text-decoration: none; color: #333}
+
+nav.navbar{
+	background: white;
+	border-bottom: 1px #eee solid;
+}
+
+.top-menu{display: flex; justify-content: space-between;}
+.login-menu{display: flex; line-height: 51px;}
+.login-menu>li{margin-right: 8px;}
+
+.stic-t>li{padding: 0 15px; font-weight: bold; color: #333; line-height: 30px; height: 30px;}
+.sticky-top{background-color: white; padding: 16px 0;}
+.c-list>li{margin: 0 10px;}
+
+.cate-title{
+	padding: 10px 25px;
+	width: 240px;
+	margin: auto;
+}
+
+.c-list{position: relative;}
+.c-List{
+	position:absolute;
+	z-index: 1000;
+	top: 30px;
+	left: -1px;
+	background-color: white;
+	padding: 0 10px;
+	border: 1px solid #eee;
+	border-radius: 10px;
+}
+.c-List>li{
+	line-height: 26px;
+	padding: 5px 0;
+	color: #555;
+	
+}
+.c-List>li:hover{
+	color: #4fd66e;
+	font-weight: bold;
+}
+
+/* 아이디 & 비번 찾기 */
+.findIdPw .fa{
+   color:#bbb;
+}
+
+.findIdPw a{
+   font-size: 13px;
+   color: #555;
+   text-decoration: none;
+}
+
+.findIdPw a:hover {
+   text-decoration: underline;
+}
+
+.findIdPw a+a:before{
+   content:'';
+   display:inline-block;
+   background-color:#808080;
+   width:3px;
+   height:3px;
+   vertical-align: 3px;
+   margin:0 5px;
+}
+
+.nav.nav-tabs a{
+	color: #666;
+}
+
+.myProfile:hover{
+	color: aqua;
+}
+
+#pwChkMsg{
+	color: red;
+	font-size: 13px;
+}
+
+/* 이메일 인증 확인 */
+.input-code{
+	padding: 6px 12px;
+	border-radius: 6px 0 0 6px;
+	border: 1px solid #ced4da;
+	outline: none;
+	width: 70%;
+	border-right: 0;
+}
+
+.time{
+	padding: 6px 12px;
+	border-radius: 0 6px 6px 0;
+	border: 1px solid #ced4da;
+	outline: none;
+	width: 30%;
+	text-align: right;
+	border-left: 0;
+}
+
+.code-msg{
+	display: none;
+	font-size: 13px;
+	color: green;
+}
+
+/* 댓글 리스트 */
+.modal-li{
+	cursor: pointer;
+}
+
+#btn-modal-remove{display: none;}
+#btn-modal-modify{display: none;}
+.cr_date{display: none;}
+
+

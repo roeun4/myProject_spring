@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.ezen.imeco.mapper.MemberMapper">
+<!--   <select id="memberList" resultType="model.MemberDTO"> -->
+  <select id="memberList" resultType="MemberDTO">
+    SELECT * FROM im_eco_Member
+  </select>
+  
+  <insert id="memberInsert" parameterType="memberDTO">
+  	INSERT INTO im_eco_Member(id, pw, name, dob, addr, email, tel, rdate) 
+  	VALUES(#{id},#{pw},#{name},#{dob},#{addr},#{email},#{tel}, now())
+  </insert>  
+ 
+  <select id="memberInfo" parameterType="Integer" resultType="memberDTO">
+  	SELECT * FROM im_eco_Member WHERE no = #{no}
+  </select>
+  
+  <delete id="deleteMember" parameterType="Integer">
+  	DELETE FROM im_eco_Member WHERE no = #{no}
+  </delete>
+  
+  <update id="memberUpdate">
+  	UPDATE im_eco_Member 
+  	SET dob=#{dob}, email=#{email}, tel=#{tel} WHERE no=#{no}
+  </update>
+  
+  <select id="idCheck" resultType="memberDTO">
+  	SELECT * FROM im_eco_Member WHERE id = #{uid}
+  </select>
+  
+  <select id="memberLogin" resultType="memberDTO">
+  	SELECT id, pw, name FROM im_eco_Member WHERE id = #{id}
+  </select>
+  
+  <select id="findId" resultType="String">
+  	SELECT id FROM im_eco_Member 
+  	WHERE name = #{name} AND tel = #{tel}
+  </select>
+  
+  <update id="findPw">
+  	UPDATE im_eco_Member SET pw = #{param3}
+  	WHERE id = #{param1} AND email = #{param2}
+  </update>
+  
+  <update id="updatePw">
+  	UPDATE im_eco_Member SET pw = #{pw}
+  	WHERE id = #{id}
+  </update>
+  
+  
+</mapper>
